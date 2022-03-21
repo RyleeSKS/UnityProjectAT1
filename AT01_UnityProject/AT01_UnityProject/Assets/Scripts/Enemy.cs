@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    //public Node targetnode;
+
     [Tooltip("Movement speed modifier.")]
     [SerializeField] private float speed = 3;
     private Node currentNode;
     private Vector3 currentDir;
     private bool playerCaught = false;
+    //NOTE: private code cannot be read by other scripts
 
     public delegate void GameEndDelegate();
     public event GameEndDelegate GameOverEvent = delegate { };
@@ -31,7 +34,15 @@ public class Enemy : MonoBehaviour
                 {
                     transform.Translate(currentDir * speed * Time.deltaTime);
                 }
-                //Implement path finding here
+                else
+                {
+                    //Implement path finding here
+                    //calculate taget here
+                    //using DFS algorothym
+                    //currentNode = targetNode;
+                    //currentDir = currentNode.transform.position - transoform.postion
+                    //currentDir = currentDir.normalized;
+                }
             }
             else
             {

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     //Define delegate types and events here
 
+    //NOTE: the code bellow allows the private code to be public 'get' but not private 'set'
     public Node CurrentNode { get; private set; }
     public Node TargetNode { get; private set; }
 
